@@ -6,30 +6,26 @@
 package com.bytesizebook.data.impl;
 
 import com.bytesizebook.data.DescriptionNumber;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 /**
- * A class with an identification number and description.
- * Implements DescriptionNumber.
+ * An automobile class that has the Primary annotation, which makes this the
+ * default class that implements the interface if a qualified name is not used.
+ * Implements DescriptionNumber
+ * 
  * @author timdowney
  */
 @Component
-public class Item implements DescriptionNumber {
+@Primary
+public class AutomobilePrimary implements DescriptionNumber {
     
-/* This comment section can be removed. It was needed to generate the archetype.
-#[[
-*/
-    @Value("${number:0}")
-    Long number;
-    @Value("${description:Convertible Cadirock}")
-    String description;
-/* This comment section can be removed. It was needed to generate the archetype.
-]]#
-*/
+    private Long number;
+    private String description;
+
     /**
      * Accessor for the identification number
-     * @return  the identification number
+     * @return
      */
     @Override
     public Long getNumber() {
@@ -47,8 +43,7 @@ public class Item implements DescriptionNumber {
 
     /**
      * Accessor for the description of the object.
-     * 
-     * @return  the description
+     * @return
      */
     @Override
     public String getDescription() {
@@ -66,7 +61,7 @@ public class Item implements DescriptionNumber {
     
     @Override
     public String toString() {
-        return String.format("Item: %s (d)", getDescription(), getNumber());
+        return String.format("Automobile: %s (%d)", getDescription(), getNumber());
     }
     
 }
