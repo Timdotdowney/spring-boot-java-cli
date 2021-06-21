@@ -18,7 +18,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Primary;
@@ -33,8 +33,7 @@ import org.springframework.context.annotation.Primary;
  * and open the template in the editor.
  */
 
-@EnableAutoConfiguration 
-@ComponentScan
+@SpringBootApplication
 public class SimpleBean implements CommandLineRunner {    
     
     public static void main(String[] args) throws Exception {
